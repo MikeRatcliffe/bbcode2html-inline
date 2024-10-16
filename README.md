@@ -10,6 +10,33 @@ Instead of depending on external stylesheets, this parser generates HTML with in
 
 This means there are absolutely no dependencies. You can use this parser in any JavaScript project without any issues.
 
+## Usage
+
+### Install
+
+```sh
+npm install bbcode2html-inline
+```
+
+### Import
+
+```js
+const { BBCode2Html } = require("bbcode2html-inline");
+
+const bbcode = `
+[b]Hello[/b]
+[i]World[/i]
+`;
+
+const out = BBCode2Html({
+  text: bbcode,
+  removeMisalignedTags: true,
+  addInLineBreaks: true,
+});
+
+console.log(out.html);
+```
+
 ## Supported Tags
 
 We have done our best to support all BBCode tags but there could be more that we don't know about. If you find any tags that we are missing then feel free to check the [contributing](#contributing) section and submit a pull request.
